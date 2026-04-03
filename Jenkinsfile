@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'docker stop inventory-container || true'
                 sh 'docker rm inventory-container || true'
-                sh 'docker run -d -p 8080:80 --name inventory-container inventory-app'
+                sh 'docker run -d -p 3001:3001 --name inventory-container inventory-app'
             }
         }
     }
