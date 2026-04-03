@@ -4,15 +4,20 @@ pipeline {
     stages {
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t inventory-app .'
+                bat 'docker build -t inventory-app .'
+            }
+        }
+
+        stage('Stop Old Container') {
+            steps {
+                bat 'docker stop inventory-container || exit 0'
+                bat 'docker rm inventory-container || exit 0'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker stop inventory-container || true'
-                sh 'docker rm inventory-container || true'
-                sh 'docker run -d -p 3001:3001 --name inventory-container inventory-app'
+                bat 'docker run -d -p 3001:80 --name inventory-container inventory-app'
             }
         }
     }
