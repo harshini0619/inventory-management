@@ -83,7 +83,13 @@ function addProduct() {
 
   document.getElementById("productName").value = "";
   document.getElementById("minLevel").value = "";
-
+  module.exports = {
+  inventory,
+  stockIn,
+  stockOut,
+  deleteItem,
+  addProduct
+};
   renderTable();
 }
 
