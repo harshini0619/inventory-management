@@ -2,22 +2,30 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker Image') {
+
+        stage('Install Dependencies') {
             steps {
-                bat 'docker build -t inventory-app .'
+                sh 'npm install'
             }
         }
 
-        stage('Stop Old Container') {
+        stage('Run Tests') {
             steps {
-                bat 'docker stop inventory-container || exit 0'
-                bat 'docker rm inventory-container || exit 0'
+                sh 'node test.js'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t inventory-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 3001:80 --name inventory-container inventory-app'
+                sh 'docker stop inventory-container || true'
+                sh 'docker rm inventory-container || true'
+                sh 'docker run -d -p 3001:3001 --name inventory-container inventory-app'
             }
         }
     }
