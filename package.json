@@ -1,0 +1,27 @@
+{
+  "name": "inventory-web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshini0619/inventory-management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshini0619/inventory-management/issues"
+  },
+  "homepage": "https://github.com/harshini0619/inventory-management#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  },
+  "dependencies": {
+    "chromedriver": "^147.0.1",
+    "selenium-webdriver": "^4.41.0"
+  }
+}
