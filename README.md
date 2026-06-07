@@ -15,13 +15,13 @@ Simple and fast user experience
 Technologies Used
 
 Frontend:
-HTML5
-CSS3
+HTML5,
+CSS3,
 JavaScript
 
 DevOps and Tools:
-Git
-GitHub
-Docker
-Jenkins
+Git,
+GitHub,
+Docker,
+Jenkins,
 GitHub Pages
